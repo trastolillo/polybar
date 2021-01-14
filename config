@@ -59,7 +59,7 @@ font-4 = Font Awesome 5 Free Solid:style=Solid:pixelsize=8;2
 font-5 = Font Awesome 5 Brands Regular:style=Regular:pixelsize=8;2
 
 modules-left = i3
-modules-center = mpd updates-pacman updates-flatpak updates-aurhelper
+modules-center = mpd updates-pacman updates-flatpak updates-aurhelper xwindow 
 modules-right = filesystem xbacklight alsa xkeyboard memory cpu wlan eth battery temperature date powermenu
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
@@ -108,6 +108,7 @@ format-prefix = " Aur: "
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
+label-foreground = #fff3d9
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -131,7 +132,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %free%
 ;label-mounted =  %free%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
