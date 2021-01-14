@@ -59,7 +59,7 @@ font-4 = Font Awesome 5 Free Solid:style=Solid:pixelsize=10;2
 font-5 = Font Awesome 5 Brands Regular:style=Regular:pixelsize=10;2
 
 modules-left = i3
-modules-center = mpd
+modules-center = mpd 
 modules-right = filesystem xbacklight alsa xkeyboard memory cpu wlan eth battery temperature date powermenu
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
@@ -81,6 +81,15 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+;[module/pacman-updates]
+;type = custom/script
+;exec = checkupdates | wc -l
+;interval = 1000
+;label = Updates: %output%
+;format.foreground = ${colors.foreground}
+;format-prefix = " "
+;format-prefix-foreground = #ff0000
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
@@ -96,7 +105,7 @@ format-prefix-underline = ${colors.secondary}
 label-layout = %layout%
 label-layout-underline = ${colors.secondary}
 
-label-indicator-padding = 2
+label-indicator-padding = 2 
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
@@ -405,19 +414,20 @@ label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
+;menu-0-0-exec = menu-open-1
+menu-0-0-exec = systemctl reboot
 menu-0-1 = power off
-menu-0-1-exec = menu-open-2
+menu-0-1-exec = systemctl poweroff
 
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
+;menu-1-0 = cancel
+;menu-1-0-exec = menu-open-0
+;menu-1-1 = reboot
+;menu-1-1-exec = sudo reboot
 
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+;menu-2-0 = power off
+;menu-2-0-exec = sudo poweroff
+;menu-2-1 = cancel
+;menu-2-1-exec = menu-open-0
 
 [settings]
 screenchange-reload = true
