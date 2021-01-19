@@ -59,8 +59,8 @@ font-4 = Font Awesome 5 Free Solid:style=Solid:pixelsize=8;2
 font-5 = Font Awesome 5 Brands Regular:style=Regular:pixelsize=8;2
 
 modules-left = i3
-modules-center = mpd updates-pacman updates-flatpak updates-aurhelper xwindow 
-modules-right = filesystem xbacklight alsa xkeyboard memory wlan eth battery temperature date
+modules-center = xwindow 
+modules-right = filesystem xbacklight alsa xkeyboard memory battery temperature date
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
