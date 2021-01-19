@@ -60,7 +60,7 @@ font-5 = Font Awesome 5 Brands Regular:style=Regular:pixelsize=8;2
 
 modules-left = i3
 modules-center = mpd updates-pacman updates-flatpak updates-aurhelper xwindow 
-modules-right = filesystem xbacklight alsa xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem xbacklight alsa xkeyboard memory wlan eth battery temperature date
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
@@ -263,12 +263,13 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = net1
+interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
 label-connected = %essid%
+;label-connecter = "%{A1:networkmanager_dmenu &:} %essid%%{A}"
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -282,6 +283,8 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
+
+;click-left = networkmanager_dmenu &
 
 [module/eth]
 type = internal/network
